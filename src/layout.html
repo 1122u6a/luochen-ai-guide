@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>{{title}}</title>
+    <meta name="description" content="{{description}}" />
+    <link rel="canonical" href="{{url}}" />
+    {{robots}}
+    <meta property="og:type" content="{{ogType}}" />
+    <meta property="og:site_name" content="{{siteName}}" />
+    <meta property="og:locale" content="zh_CN" />
+    <meta property="og:title" content="{{title}}" />
+    <meta property="og:description" content="{{description}}" />
+    <meta property="og:url" content="{{url}}" />
+    {{ogImage}}
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="theme-color" content="#ffffff" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    {{styles}} {{head}}
+  </head>
+  <body class="page-{{id}}">
+    <a class="skip-link" href="#main">跳到正文</a>
+    <header class="learn-header">
+      <div class="header-inner">
+        <a href="/" class="learn-logo" aria-label="{{siteName}}首页">{{siteName}}</a>
+        <nav aria-label="主导航"><a href="/" {{navHome}}>教程中心</a><a href="/#toolkit">工具包</a></nav>
+      </div>
+    </header>
+    {{content}}
+    <footer class="learn-footer">
+      <strong>{{siteName}}</strong><span>精选教程 · 分步学习 · 问题答疑</span><small>{{footerNote}}</small>
+    </footer>
+    {{scripts}}
+  </body>
+</html>

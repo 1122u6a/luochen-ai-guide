@@ -1,0 +1,481 @@
+<main class="cm-wrap">
+  <nav class="center-breadcrumb" aria-label="当前位置">
+    <a href="/">教程中心</a><span>/</span><a href="/claude-code/">Claude Code 使用教程</a><span>/</span><strong>完整教程</strong>
+  </nav>
+
+  <section class="cm-hero">
+    <span class="center-eyebrow">Claude Code · 完整教程 · Mac / Windows</span>
+    <h1>先给 Claude 固定一个出口<br /><span class="gradient-text">再一步步用上 Claude Code</span></h1>
+    <p>6 章视频，一共约 6 分钟：环境配置 → 登录网页版 → 开通 Pro → 绑定 Claude Code。</p>
+    <div class="center-actions">
+      <a class="btn btn-primary-new" href="#video">看视频教程 →</a>
+      <a class="btn btn-secondary-new" href="#downloads">下载配置包</a>
+    </div>
+  </section>
+
+  <section class="cm-card cm-video" id="video">
+    <div class="cm-tabs" role="tablist" aria-label="选择章节">
+      <button type="button" role="tab" data-ch="0" class="current" aria-selected="true">
+        <b>第 0 章</b>先看懂再动手<small>0:34</small>
+      </button>
+      <button type="button" role="tab" data-ch="1" aria-selected="false"><b>第 1 章</b>环境配置<small>2:22</small></button>
+      <button type="button" role="tab" data-ch="2" aria-selected="false"><b>第 2 章</b>登录网页版<small>0:26</small></button>
+      <button type="button" role="tab" data-ch="3" aria-selected="false"><b>第 3 章</b>开通 Pro<small>0:53</small></button>
+      <button type="button" role="tab" data-ch="4" aria-selected="false"><b>第 4 章</b>绑定 Claude Code<small>0:27</small></button>
+      <button type="button" role="tab" data-ch="5" aria-selected="false"><b>第 5 章</b>注意事项<small>1:28</small></button>
+    </div>
+    <div class="full-video">
+      <video
+        controls=""
+        playsinline=""
+        preload="metadata"
+        poster="/assets/img/cc-ch0.webp"
+        aria-label="Claude Code 完整教程视频"
+        src="/assets/video/cc-ch0.mp4"
+      >
+        <source src="/assets/video/cc-ch0.mp4" type="video/mp4" />
+        请使用支持 MP4 的浏览器。
+      </video>
+      <p>
+        <span id="cm-now">第 0 章 · 先看懂再动手</span> · 看完自动播下一章
+        <a id="cm-open" href="/assets/video/cc-ch0.mp4" target="_blank" rel="noopener">单独打开视频 ↗</a>
+      </p>
+      <div class="video-chapters">
+        <div class="video-chapters-title">本章章节 · 点击跳到对应位置</div>
+        <div class="video-chapters-grid" id="cm-points">
+          <button type="button" class="video-chapter" data-time="0"><span>00:00</span>原理：机场 + 住宅 IP</button
+          ><button type="button" class="video-chapter" data-time="13"><span>00:13</span>开始前备好 3 样</button
+          ><button type="button" class="video-chapter" data-time="23"><span>00:23</span>顺序：一天一步</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cm-card">
+    <h2>先弄懂：为什么要用链式代理？ <button class="video-time" type="button" data-ch="0" data-time="0">视频 第0章 00:00 ↗</button></h2>
+    <div class="cm-routes">
+      <div class="cm-route">
+        <span class="lab">只用机场</span><span class="hop">你</span><i>→</i><span class="hop">机场节点</span><i>→</i
+        ><span class="hop">Claude</span><em>出口 IP 很多人共用，还一直在变</em>
+      </div>
+      <div class="cm-route">
+        <span class="lab">只用住宅 IP</span><span class="hop">你</span><i>→</i><span class="hop">住宅 IP</span><i>→</i
+        ><span class="hop">Claude</span><em>出口固定，但从国内直连过去慢、容易断</em>
+      </div>
+      <div class="cm-route good">
+        <span class="lab">链式代理</span><span class="hop">你</span><i>→</i><span class="hop">机场节点</span><i>→</i
+        ><span class="hop">住宅 IP</span><i>→</i><span class="hop">Claude</span><em>机场负责连出去，住宅 IP 负责出口：又稳，出口又固定</em>
+      </div>
+    </div>
+    <p style="margin-top: 12px">
+      机场节点坏了随便换一个，Claude 看到的始终是你的住宅 IP。住宅 IP 断了，请求直接失败，不会偷偷换成国内 IP。
+    </p>
+    <div class="cm-why-mi">
+      <h3>为什么用 Clash Mi，不用 Clash Verge？</h3>
+      <ul>
+        <li>这套配置模板、截图和验收步骤，都是在 Clash Mi 上跑通、验过的。</li>
+        <li>Mac 和 Windows 用的是同一个软件，教程和截图两边通用。</li>
+        <li>Clash Verge 也能做链式，但导入方式、TUN 和覆写设置都不一样，换了要重新调、重新验。不想踩坑，就跟着用 Clash Mi。</li>
+        <li>我自己用下来，Clash Verge 用起来非常复杂，有泄露的风险，改配置也不像 Clash Mi 那样丝滑。</li>
+        <li>Clash Mi 在手机上也能用，电脑和手机可以无缝切换，具体看 YouTube 那个视频。</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="cm-card">
+    <h2>开始前备好 3 样 <button class="video-time" type="button" data-ch="0" data-time="13">视频 第0章 00:13 ↗</button></h2>
+    <div class="cm-prep">
+      <div><b>① Codex</b>有 ChatGPT 会员，Codex 能正常用</div>
+      <div><b>② 订阅链接</b>你自己机场的订阅，当入口节点用</div>
+      <div>
+        <b>③ 住宅 IP</b>IP、端口、账号、密码<br />还没有？<a
+          href="https://share.cliproxy.com/share/tk5bwzl6s"
+          target="_blank"
+          rel="noopener"
+          >Cliproxy 住宅 IP（推荐链接）↗</a
+        >
+      </div>
+    </div>
+  </section>
+
+  <section class="cm-card">
+    <h2>顺序：一天一步 <button class="video-time" type="button" data-ch="0" data-time="23">视频 第0章 00:23 ↗</button></h2>
+    <div class="cm-days">
+      <div><b>第 1 天</b>配好环境，在比特浏览器里登录网页版，正常用</div>
+      <i>→</i>
+      <div><b>第 2 天</b>没问题再开 Pro</div>
+      <i>→</i>
+      <div><b>第 3 天</b>再绑定 Claude Code</div>
+    </div>
+    <p class="warn-red" style="margin-top: 12px">别一拿到号马上就上 Claude Code，容易被判定行为可疑直接封号。</p>
+  </section>
+
+  <h2 class="cm-part">第 1 章 · 环境配置</h2>
+
+  <section class="cm-card cm-step">
+    <span class="cm-num">1</span>
+    <div class="cm-step-body">
+      <h2>下载、装 Clash Mi <button class="video-time" type="button" data-ch="1" data-time="0">视频 第1章 00:00 ↗</button></h2>
+      <div class="cm-who single">
+        <div class="you">
+          <strong>你做</strong><br />
+          Mac（M 芯片、Intel 芯片都一样）→ <code>macos_universal.dmg</code> · Windows → <code>windows_x64.exe</code>，<a href="#downloads"
+            >在下面下载</a
+          >。<br />
+          双击安装。Mac 弹“允许网络扩展”点允许；Windows 弹“Windows 已保护你的电脑”点“更多信息 → 仍要运行”，弹管理员提示点“是”。
+        </div>
+      </div>
+      <p style="margin-top: 10px">
+        没用过 Clash Mi？先看配置包里的《Clash Mi 使用说明书》和
+        <a
+          href="https://www.youtube.com/watch?v=QjR9FMuZ3o0&amp;t=269s"
+          target="_blank"
+          rel="noopener"
+          style="color: #d9602f; font-weight: 600"
+          >YouTube 教程 ↗</a
+        >，5 分钟就够。
+      </p>
+    </div>
+  </section>
+
+  <section class="cm-card cm-step">
+    <span class="cm-num">2</span>
+    <div class="cm-step-body">
+      <h2>交给 Codex，把配置和软件配通 <button class="video-time" type="button" data-ch="1" data-time="24">视频 第1章 00:24 ↗</button></h2>
+      <div class="cm-who">
+        <div class="you">
+          <strong>你做</strong><br />把解压后的配置包交给 Codex，复制《先读我》里的口令。<br />把机场的订阅链接，还有你住宅 IP
+          的全部信息（IP、端口、账号、密码）都发给 Codex，它就按要求开始填。
+        </div>
+        <div class="codex">
+          <strong>Codex 做</strong><br />填好 <code>配置模板.yaml</code> → 导入 Clash Mi → 选中这份配置 → 入口节点选一个能用的 → 打开连接
+        </div>
+      </div>
+      <figure class="cm-shot">
+        <img
+          src="/assets/img/cc-step2.webp"
+          alt="把整个配置包拖进 Codex，再粘贴《先读我》里的口令和你的资料"
+          width="1280"
+          height="720"
+          loading="lazy"
+        />
+        <figcaption>把整个配置包拖进 Codex，再粘贴《先读我》里的口令和你的资料</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="cm-card cm-gate">
+    <h2>🚦 关卡：软件通了才往下走 <button class="video-time" type="button" data-ch="1" data-time="59">视频 第1章 00:59 ↗</button></h2>
+    <p>
+      Chrome 能打开 google.com，Clash Mi 的“连接”页里出现新连接，就是通了。<br />不通：把 Clash Mi 的报错截图发给
+      Codex，让它修到通为止。没通之前不碰 Claude 的设置。
+    </p>
+  </section>
+
+  <section class="cm-card cm-step">
+    <span class="cm-num">3</span>
+    <div class="cm-step-body">
+      <h2>让 Claude 走固定出口 <button class="video-time" type="button" data-ch="1" data-time="70">视频 第1章 01:10 ↗</button></h2>
+      <div class="cm-who">
+        <div class="codex">
+          <strong>Codex 做</strong><br />先查出口 IP 是不是你的住宅 IP，再把 Claude Code 设成走本机端口 <code>127.0.0.1:17903</code>；Claude
+          桌面端由 Clash Mi 的 TUN 接管。最后给你一张验收表，四项都通过。
+        </div>
+        <div class="you">
+          <strong>你做</strong><br />跟 Codex 说“已经连接了，帮我检查出口 IP”。中间弹窗要改
+          <code>~/.claude/settings.json</code>，点允许。<br />Codex 说“设置好了”以后，把 Claude 和 Claude Code 关掉重开一次。
+        </div>
+      </div>
+      <figure class="cm-shot">
+        <img
+          src="/assets/img/cc-step3.webp"
+          alt="Codex 给的验收表：出口 IP、固定出口、TUN、Claude Code 代理都通过（IP 后两段已打码）"
+          width="1280"
+          height="720"
+          loading="lazy"
+        />
+        <figcaption>Codex 给的验收表：出口 IP、固定出口、TUN、Claude Code 代理都通过（IP 后两段已打码）</figcaption>
+      </figure>
+      <div class="cm-flow">
+        <span>Claude / Claude Code</span><i>→</i><span>本机 17903</span><i>→</i><span>入口节点</span><i>→</i><span>专用落地</span><i>→</i
+        ><span>Claude 网站</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="cm-card cm-step">
+    <span class="cm-num">4</span>
+    <div class="cm-step-body">
+      <h2>验收：看两个地方 <button class="video-time" type="button" data-ch="1" data-time="92">视频 第1章 01:32 ↗</button></h2>
+      <div class="cm-check">
+        <div>
+          <h3>A · Clash Mi「连接」页</h3>
+          左侧点 <b>⇄</b>，搜索框输入 <code>claude</code>。<br />
+          代理链显示 <b>固定出口 → 专用落地</b> <span class="cm-ok">= 对</span><br />
+          显示 DIRECT 或别的节点 <span class="cm-bad">= 不对，发给 Codex</span><br />正确的样子见下图 ↓
+        </div>
+        <div>
+          <h3>B · Chrome 打开检测站</h3>
+          打开
+          <a href="https://ip.net.coffee/claude/" target="_blank" rel="noopener" style="color: #d9602f; font-weight: 600">ip.net.coffee ↗</a
+          >，看“Claude AI IP 检测”：
+          <ul>
+            <li><span class="cm-ok">✓</span> Claude 出口 IP = 你的住宅 IP</li>
+            <li><span class="cm-ok">✓</span> IPv4 出口也是住宅 IP</li>
+            <li><span class="cm-ok">✓</span> WebRTC 里没有国内 IP</li>
+            <li>时区、语言不一致不用管，这不归代理管</li>
+            <li>“机房 IP”“有滥用记录”是节点质量问题，换节点才能改</li>
+          </ul>
+        </div>
+      </div>
+      <figure class="cm-shot">
+        <img
+          src="/claude-code/guide/"
+          alt="Clash Mi 连接页：claude 的连接都走 固定出口 → 专用落地"
+          width="1858"
+          height="559"
+          loading="lazy"
+        />
+        <figcaption>Clash Mi 连接页：搜 claude，三条连接的代理链都是“固定出口 → 专用落地”</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="cm-card cm-step">
+    <span class="cm-num">5</span>
+    <div class="cm-step-body">
+      <h2>
+        断网测试：代理一断，Claude 就断 <button class="video-time" type="button" data-ch="1" data-time="118">视频 第1章 01:58 ↗</button>
+      </h2>
+      <div class="cm-flow">
+        <span>Clash Mi 里把「固定出口」切到 <b>REJECT</b></span
+        ><i>→</i><span>让 Claude Code 说一句话</span><i>→</i><span class="cm-bad">应该报错连不上</span><i>→</i
+        ><span>切回「专用落地」恢复</span>
+      </div>
+      <figure class="cm-shot">
+        <img
+          src="/assets/img/cc-step5.webp"
+          alt="固定出口切到 REJECT 后，浏览器打不开网站，这就对了"
+          width="1280"
+          height="720"
+          loading="lazy"
+        />
+        <figcaption>固定出口切到 REJECT 后，浏览器打不开网站，这就对了</figcaption>
+      </figure>
+      <p style="margin-top: 10px">
+        能连上、或者查到国内 IP，就是有漏洞，停下来发给 Codex。Windows
+        也照这样设一遍，这是最保险的做法；不会设也能用，只是网络不稳时有小概率走漏。
+      </p>
+    </div>
+  </section>
+
+  <h2 class="cm-part">第 2–4 章 · 登录、开 Pro、绑定 Claude Code</h2>
+
+  <section class="cm-card cm-step">
+    <span class="cm-num">6</span>
+    <div class="cm-step-body">
+      <h2>
+        第 1 天：在比特浏览器里登录网页版 <button class="video-time" type="button" data-ch="2" data-time="0">视频 第2章 00:00 ↗</button>
+      </h2>
+      <div class="cm-who single">
+        <div class="you">
+          <strong>你做</strong><br />打开比特指纹浏览器 → 打开 Claude 官网 → 用邮箱登录 → 发一句话，有回复就是登录成功。<br />第一天就在网页版正常用，别急着开会员，也别急着上
+          Claude Code。
+        </div>
+      </div>
+      <figure class="cm-shot">
+        <img src="/assets/img/cc-step6.webp" alt="在比特浏览器里打开 Claude 官网，用邮箱登录" width="1280" height="720" loading="lazy" />
+        <figcaption>在比特浏览器里打开 Claude 官网，用邮箱登录</figcaption>
+      </figure>
+      <p style="margin-top: 10px">
+        比特浏览器怎么配、内核改 146、登录失败怎么办，在
+        <a href="/claude/guide/#guide-ready" style="color: #d9602f; font-weight: 600">《注册、登录与会员充值》</a> 里有完整步骤。
+      </p>
+    </div>
+  </section>
+
+  <section class="cm-card cm-step">
+    <span class="cm-num">7</span>
+    <div class="cm-step-body">
+      <h2>第 2 天：国内开通 Pro <button class="video-time" type="button" data-ch="3" data-time="0">视频 第3章 00:00 ↗</button></h2>
+      <div class="cm-who single">
+        <div class="you">
+          <strong>你做</strong><br />商城里点 Claude，选 Pro → 先看说明，确认自己的号符合要求 → 下单，按说明激活 → 回到 Claude
+          刷新，打开设置，看是否显示 Pro。
+        </div>
+      </div>
+      <div class="cm-shots">
+        <figure class="cm-shot">
+          <img src="/assets/img/cc-step7a.webp" alt="商城首页：点 Claude，选 Pro" width="1280" height="720" loading="lazy" />
+          <figcaption>商城首页：点 Claude，选 Pro</figcaption>
+        </figure>
+        <figure class="cm-shot">
+          <img src="/assets/img/cc-step7b.webp" alt="激活后：设置 → 账单显示 Pro plan" width="1280" height="720" loading="lazy" />
+          <figcaption>激活后：设置 → 账单显示 Pro plan</figcaption>
+        </figure>
+      </div>
+      <p style="margin-top: 10px">
+        <b>新手先开 Pro 就够了。</b><span class="warn-red">五倍、二十倍的 Max 大概率会弹 KYC 认证，账号注册不满一个月也开不了。</span>
+      </p>
+      <div class="center-actions" style="margin-top: 12px">
+        <a class="btn btn-secondary-new" href="/claude/guide/#guide-ready">充值图文步骤</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="cm-card cm-step">
+    <span class="cm-num">8</span>
+    <div class="cm-step-body">
+      <h2>第 3 天：绑定 Claude Code <button class="video-time" type="button" data-ch="4" data-time="0">视频 第4章 00:00 ↗</button></h2>
+      <ol class="cm-list">
+        <li>
+          打开 Claude 桌面端，进 Code 页。第一次会要求重新登录一次邮箱，按你之前登录 Claude 的方式登。<button
+            class="video-time"
+            type="button"
+            data-ch="4"
+            data-time="4"
+          >
+            视频 00:04 ↗
+          </button>
+        </li>
+        <li>
+          去邮箱找到 Claude 发来的邮件，点里面的按钮；跳回 Claude 后，点那个黑色按钮，就绑定成功了。<button
+            class="video-time"
+            type="button"
+            data-ch="4"
+            data-time="12"
+          >
+            视频 00:12 ↗
+          </button>
+        </li>
+        <li>
+          回到 Code 页发一句话，它开始回复，就可以用 Claude Code 干活了。<button
+            class="video-time"
+            type="button"
+            data-ch="4"
+            data-time="21"
+          >
+            视频 00:21 ↗
+          </button>
+        </li>
+      </ol>
+      <div class="cm-shots">
+        <figure class="cm-shot">
+          <img src="/assets/img/cc-step8a.webp" alt="第一次进 Code：重新登录一次邮箱" width="1280" height="720" loading="lazy" />
+          <figcaption>第一次进 Code：重新登录一次邮箱</figcaption>
+        </figure>
+        <figure class="cm-shot">
+          <img src="/assets/img/cc-step8b.webp" alt="从邮件跳回 Claude，点黑色按钮就绑定成功" width="1280" height="720" loading="lazy" />
+          <figcaption>从邮件跳回 Claude，点黑色按钮就绑定成功</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <h2 class="cm-part">第 5 章 · 注意事项</h2>
+
+  <section class="cm-card">
+    <h2>三个要注意的点 <button class="video-time" type="button" data-ch="5" data-time="0">视频 第5章 00:00 ↗</button></h2>
+    <ol class="cm-list">
+      <li>
+        <b>每次用桌面端之前，先开 IP 检测。</b>比如电脑重启了，登录前一定先看一眼还是不是你的住宅 IP，没问题再用。<button
+          class="video-time"
+          type="button"
+          data-ch="5"
+          data-time="2"
+        >
+          视频 00:02 ↗
+        </button>
+      </li>
+      <li>
+        <b class="warn-red">新号、刚开 Pro 的号，别直接上 Claude Code。</b>先在比特浏览器里用两三天，稳定了再绑。刚在网页版登录完马上登
+        Claude Code，风险高，可能被判定行为可疑直接封号。<button class="video-time" type="button" data-ch="5" data-time="16">
+          视频 00:16 ↗
+        </button>
+      </li>
+      <li>
+        <b>时区、语言对不上，关系不大。</b>网页版在比特里能改，桌面端改不了。风控主要看网络环境和使用环境，重点放在网络上。<button
+          class="video-time"
+          type="button"
+          data-ch="5"
+          data-time="54"
+        >
+          视频 00:54 ↗
+        </button>
+      </li>
+    </ol>
+    <p style="margin-top: 12px">
+      <b>卡住了：</b>哪一步不对，先截图发给 Codex，让它帮你查。还解决不了，<button
+        class="video-time"
+        type="button"
+        data-ch="5"
+        data-time="79"
+      >
+        视频 01:19 ↗
+      </button>
+    </p>
+  </section>
+
+  <section class="cm-card cm-downloads" id="downloads">
+    <h2>下载</h2>
+    <p class="cm-sub">配置包放在本站；Clash Mi 安装包直接从官方 GitHub 下载</p>
+    <div class="toolkit-grid">
+      <div class="toolkit-group">
+        <div class="toolkit-group-title">
+          <span class="toolkit-num">1</span>
+          <div>
+            <h3>配置包 v0.4</h3>
+            <small>使用说明书 · 给 Codex 的口令 · 配置模板</small>
+          </div>
+        </div>
+        <a class="toolkit-item" href="/downloads/clashmi-config-pack-v0.4.zip" download=""
+          ><span><strong>下载配置包</strong><small>解压后交给 Codex，先看《先读我》</small></span
+          ><em>本站 ↓</em></a
+        >
+        <a class="toolkit-item" href="https://www.youtube.com/watch?v=QjR9FMuZ3o0&amp;t=269s" target="_blank" rel="noopener"
+          ><span><strong>Clash Mi 视频教程</strong><small>导入配置、连接、手机上用</small></span
+          ><em>YouTube ↗</em></a
+        >
+      </div>
+      <div class="toolkit-group">
+        <div class="toolkit-group-title">
+          <span class="toolkit-num">2</span>
+          <div>
+            <h3>Clash Mi 安装包（官方）</h3>
+            <small>1.0.31.1703 · 来自 KaringX/clashmi</small>
+          </div>
+        </div>
+        <a
+          class="toolkit-item"
+          href="https://github.com/KaringX/clashmi/releases/download/v1.0.31.1703/clashmi_1.0.31.1703_macos_universal.dmg"
+          target="_blank"
+          rel="noopener"
+          ><span><strong>Mac 通用版</strong><small>M 芯片、Intel 都用它 · 93 MB · 已过苹果公证</small></span
+          ><em>GitHub ↓</em></a
+        >
+        <a
+          class="toolkit-item"
+          href="https://github.com/KaringX/clashmi/releases/download/v1.0.31.1703/clashmi_1.0.31.1703_windows_x64.exe"
+          target="_blank"
+          rel="noopener"
+          ><span><strong>Windows x64 版</strong><small>43 MB · 无数字签名，安装时点“仍要运行”</small></span
+          ><em>GitHub ↓</em></a
+        >
+        <a class="toolkit-item" href="https://github.com/KaringX/clashmi/releases" target="_blank" rel="noopener"
+          ><span><strong>全部版本</strong><small>手机版、更新版本都在这里</small></span
+          ><em>GitHub ↗</em></a
+        >
+      </div>
+    </div>
+    <p class="cm-dl-note">配置包里的《校验说明》写有两个安装包的官方 SHA-256，下载后可以自己核对。</p>
+  </section>
+
+  <section class="cm-card" style="padding: 0; border: 0; box-shadow: none; background: transparent">
+    <div class="cm-notice">
+      <strong>先说清楚：</strong>固定 IP 不保证账号不被封。本站不卖节点和机场，只讲 Clash Mi 这个软件怎么配、怎么用；订阅和住宅 IP
+      用你自己的，配置文件、密码、订阅链接只留在自己电脑上。重要账号先别用，先拿空白浏览器和新会话测。
+    </div>
+  </section>
+
+  <a class="center-back" href="/claude-code/">← 返回 Claude Code 使用教程</a>
+</main>
